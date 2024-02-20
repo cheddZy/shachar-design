@@ -1,0 +1,144 @@
+---
+import '../globals.scss';
+import '../styles.scss';
+import '../themes.scss';
+---
+
+
+<script>
+    const dataTheme = document.documentElement;
+    const button = document.querySelector('#themeSwitch');
+    // const theme = dataTheme.getAttribute('data-test');
+
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+
+    // Check local storage for 'theme'
+    // if defined already, make sure that <html> data-theme corresponds with localStorage.
+    // If not defined, set a new entry in localStorage based on the system's Theme.
+    switch(localStorage.getItem('theme')) {
+        case 'dark':
+            document.documentElement.setAttribute('data-theme', 'dark')
+            break;
+        case 'light':
+            document.documentElement.setAttribute('data-theme', 'light')
+            break;
+        default:
+            console.warn('No theme set, creating & storing theme based on system preference: ', systemTheme);
+            localStorage.setItem('theme', systemTheme);
+            updateTheme(localStorage.getItem('theme'))
+            break;
+    }
+
+
+    function updateTheme(value) {
+        const theme = value === "system" ? systemTheme : value;
+        document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    button.addEventListener('click', () => {
+         switch(localStorage.getItem('theme')) {
+             case 'dark':
+                 console.log('dark')
+                 localStorage.setItem('theme', 'light');
+                 document.documentElement.setAttribute('data-theme', 'light')
+                 break;
+             case 'light':
+                 console.log('light')
+                 localStorage.setItem('theme', 'dark');
+                 document.documentElement.setAttribute('data-theme', 'dark')
+                 break;
+         }
+    })
+</script>
+
+
+<button name="themeSwitch" id="themeSwitch">
+    <a class="" id='sunIcon'>sun</a>
+</button>
+<p id="systemTheme" data-test="data not set!"><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<script>-->
+    <!--    const select = document.getElementById("themeSwitch") as HTMLButtonElement;-->
+    <!--    const theme = 'light'-->
+    <!--    const sunIcon = document.getElementById('sunIcon');-->
+    <!--    const moonIcon = document.getElementById('moonIcon');-->
+    <!--    select.value = theme;-->
+    <!--    // console.log(['Local Storage: ', localStorage.getItem("theme")])-->
+    <!--    console.log(['Selected element: ', select]);-->
+    <!--    console.log(['Local Storage Theme: ', theme]);-->
+    <!--    // console.log(['System Theme: ', systemTheme]);-->
+    <!--    // function IconTheme() {-->
+    <!--    //     switch(theme) {-->
+    <!--    //         case 'light':-->
+    <!--    //             sunIcon.classList.remove('hidden');-->
+    <!--    //             moonIcon.classList.add('hidden');-->
+    <!--    //             // console.log(['Local Storage: ', localStorage.getItem("theme")])-->
+    <!--    //             break;-->
+    <!--    //         case 'dark':-->
+    <!--    //             sunIcon.classList.add('hidden');-->
+    <!--    //             moonIcon.classList.remove('hidden');-->
+    <!--    //             // console.log(['Local Storage: ', localStorage.getItem("theme")])-->
+    <!--    //             break;-->
+    <!--    //     }-->
+    <!--    //     return-->
+    <!--    // }-->
+    <!--    select.addEventListener('click', (event: Event) => {-->
+    <!--        switch(select.value) {-->
+    <!--            case 'light': // If theme = light, change to dark when button is pressed-->
+    <!--                select.value = 'dark'-->
+    <!--                updateTheme(select.value)-->
+    <!--                // localStorage.setItem('theme', 'dark');-->
+    <!--                console.log(['Local: ', localStorage.getItem("theme")])-->
+    <!--                console.log(['Response: ', select.value])-->
+    <!--                break;-->
+    <!--            case 'dark': // If theme = dark, change to light when button is pressed-->
+    <!--                select.value = 'light'-->
+    <!--                updateTheme(select.value)-->
+    <!--                // localStorage.setItem('theme', 'light');-->
+    <!--                console.log(['Local Storage: ', localStorage.getItem("theme")])-->
+    <!--                console.log(['Response: ', select.value])-->
+    <!--                break;-->
+    <!--        }-->
+    <!--    })-->
+    <!--    // console.log(['Local Storage: ', localStorage.getItem("theme")])-->
+    <!--    // console.log(['Response: ', select.value])-->
+    <!--    function updateTheme(value) {-->
+    <!--        const theme = value === "system" ? systemTheme : value;-->
+    <!--        document.documentElement.classList.remove("dark", "light");-->
+    <!--        document.documentElement.classList.add(theme);-->
+    <!--    }-->
+    <!--    updateTheme(select.value);-->
+    <!--</script>-->

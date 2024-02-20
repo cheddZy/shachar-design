@@ -1,0 +1,95 @@
+@tailwind components;
+@tailwind variants;
+@tailwind base;
+@import 'globals.scss';
+
+//* {
+//  @apply border-2;
+//  @apply border-cyan-100;
+//}
+
+header {
+  @apply transition-colors;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: auto;
+  padding: 1rem 12%;
+
+  border-bottom: dotted 1px rgba(0, 0, 0, 0.25);
+}
+
+header:hover #themeSwitch {
+  border: solid 1px rgba(9, 9, 10, 0.2);
+}
+
+header:hover #languageSwitch {
+  border: solid 1px rgba(9, 9, 10, 0.2);
+}
+
+
+
+
+#themeSwitch:hover {
+  border: solid 1px rgba(9, 9, 10, 1);
+  background-color: rgba(9, 9, 10, 1);
+  color: $text;
+}
+
+
+
+#themeSwitch {
+  @apply px-1;
+  @apply py-1;
+  @apply rounded-md;
+  @apply transition-all;
+  @apply duration-200;
+
+  border: solid transparent 1px;
+  color: $text;
+}
+
+#navContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+}
+
+//#navContainer {
+//  display: flex;
+//  gap: 0.5rem;
+//
+//  align-items: center;
+//}
+//
+//.navItem :has(a) {
+//  background-color: firebrick;
+//}
+
+@media only screen and (max-width: 600px) {
+  #emailContainer {
+    display: none;
+  }
+}
+
+#contentContainer {
+  margin-inline: 12%;
+  padding: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid transparent 2px;
+  height: 30rem;
+  background-color: $bg;
+  color: $text;
+  @apply rounded-2xl;
+}

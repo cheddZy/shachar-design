@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Schemes */
+
+//$background-dark: #09090a;
+//$text-dark: #FEFEFE;
+//$primary-dark: #09090a;
+//$secondary-dark: #444;
+//
+//$background-light: #FEFEFE;
+//$text-light: #09090a;
+//$primary-light: #FEFEFE;
+//$secondary-light: #d0d0d0;
+
+:root {
+  --font-scale: 1.333;
+  --p: 1rem;
+  --h6: calc(var(--p) * var(--font-scale));
+  --h5: calc(var(--h6) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
+  --small: calc(var(--p) / var(--font-scale));
+
+
+  //Light theme fall-back
+  --bg: #f1f1f1;
+  --secondary: #9e9e9e;
+  --text: #333;
+}
+
+[data-theme='dark'] {
+  --bg: #111;
+  --secondary: #333;
+  --text: #f1f1f1;
+}
+
+[data-theme='light'] {
+  --bg: #fefefe;
+  --secondary: #9e9e9e;
+  --text: #333;
+}
+
+$bg: var(--bg);
+$secondary: var(--secondary);
+$text: var(--text);
+
+
+h1 {
+  font-size: var(--h1) !important;
+}
+
+h2 {
+  font-size: var(--h2) !important;
+}
+
+h3 {
+  font-size: var(--h3) !important;
+}
+
+h4 {
+  font-size: var(--h4) !important;
+}
+
+h5 {
+  font-size: var(--h5) !important;
+}
+
+h6 {
+  font-size: var(--h6) !important;
+}
+
+p {
+  font-size: var(--p) !important;
+}
+
+small {
+  font-size: var(--small) !important;
+}
+
+
+//Testing for Types
+//h1:before {content: 'h1'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//h2:before {content: 'h2'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//h3:before {content: 'h3'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//h4:before {content: 'h4'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//h5:before {content: 'h5'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//h6:before {content: 'h6'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+//p:before {content: 'p'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html,
+body {
+  hanging-punctuation: first last;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $bg;
+  color: $text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+input, textarea, button, select {
+  font: inherit
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, html, body {
+    @apply transition-none;
+  }
+}
