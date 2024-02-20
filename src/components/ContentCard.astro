@@ -2,10 +2,13 @@
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
+
+const {src, alt, ariaDesc} = Astro.props;
+
 ---
 
 <div class="contentCard">
- Testing!
+ <img src={src} alt={alt} aria-description={ariaDesc}>
 </div>
 
 
@@ -13,8 +16,9 @@ import '../themes.scss';
 
     .contentCard {
         width: 100%;
-        height: 5rem;
-        background-color: $bg;
-    }
+        background-color: grey;
+       @apply rounded-md;
+     aspect-ratio: 16/9;
 
+    }
 </style>

@@ -1,5 +1,4 @@
 ---
-
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
@@ -7,24 +6,54 @@ import ContentCard from "./ContentCard.astro";
 ---
 
 
-
-
 <div id="contentContainer">
-   <h2>Hey there!</h2>
-    <h5>Wowzers!</h5>
-    <p>This is an accompanying paragraph.</p>
-    <section>
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
+    <section id="cards">
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+        <ContentCard alt="Alt text!"/>
+
 
     </section>
 </div>
+
+<style>
+
+    section {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr ;
+        gap: 0.5rem 0.5rem;
+        grid-template-areas:
+    ". . "
+    ". .";
+
+    }
+
+    @media screen and (max-width: 768px) {
+        section {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+        }
+    }
+
+
+
+</style>
