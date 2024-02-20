@@ -37,23 +37,27 @@
   //Light theme fall-back
   --bg: #f4f3ee;
   --secondary: #9e9e9e;
+  --accent: #8d56de;
   --text: #0b090a;
 }
 
 [data-theme='dark'] {
   --bg: #0b090a;
-  --secondary: #5670dc;
+  --secondary: #7a7a7a;
+  --accent: #8e57e0;
   --text: #f1f1f1;
 }
 
 [data-theme='light'] {
   --bg: #f4f3ee;
-  --secondary: #0b090a;
+  --secondary: #7a7a7a;
+  --accent: #8d56de;
   --text: #0b090a;
 }
 
 $bg: var(--bg);
 $secondary: var(--secondary);
+$accent: var(--accent);
 $text: var(--text);
 
 
@@ -133,10 +137,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   max-width: 75ch;
   text-wrap: pretty;
-}
-
-a:link {
-  color: $secondary;
 }
 
 img, picture, svg, video {
