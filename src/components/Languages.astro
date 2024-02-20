@@ -2,51 +2,12 @@
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
+import { ChevronDown } from '@astropub/icons'
 ---
 
 
 
-    <button id="languageSwitch">
-        <a id="l-214">b</a>
-        <a id="c-213">a</a>
+    <button class="group" id="languageSwitch">
+        <svg id="l-214" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+        <ChevronDown class="group group-hover:rotate-180 transition-transform duration-200" id="c-213" size="24" stroke-width="5pt" />
     </button>
-
-<style>
-
-    #languageSwitch:hover {
-        border: solid 1px rgba(9, 9, 10, 1);
-        background-color: rgba(9, 9, 10, 1);
-        color: white;
-    }
-
-    .dark #languageSwitch:hover {
-        border: solid 1px rgb(255, 255, 255);
-        background-color: rgb(255, 255, 255);
-        color: rgba(9, 9, 10, 1);
-    }
-
-
-    #languageSwitch {
-        @apply px-2;
-        @apply py-1;
-        @apply rounded-md;
-        @apply transition-all;
-        @apply duration-200;
-
-        display: flex;
-        gap: 0.2rem;
-
-        border: solid transparent 1px;
-        color: rgba(0, 0, 0, 0.75)
-    }
-    /*The Chevron Icon*/
-    #c-213 {
-        scale: 0.7;
-    }
-    /*The Language Icon*/
-    #l-214 {
-        scale: 0.85;
-    }
-
-
-</style>

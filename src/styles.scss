@@ -9,7 +9,6 @@
 //}
 
 header {
-  @apply transition-colors;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,22 +22,19 @@ header {
 }
 
 header:hover #themeSwitch {
-  border: solid 1px rgba(9, 9, 10, 0.2);
+  border: solid 1px $text;
 }
 
 header:hover #languageSwitch {
-  border: solid 1px rgba(9, 9, 10, 0.2);
+  border: solid 1px $text;
 }
-
-
 
 
 #themeSwitch:hover {
-  border: solid 1px rgba(9, 9, 10, 1);
-  background-color: rgba(9, 9, 10, 1);
-  color: $text;
+  border: solid 1px $text;
+  background-color: $text;
+  color: $bg;
 }
-
 
 
 #themeSwitch {
@@ -52,11 +48,60 @@ header:hover #languageSwitch {
   color: $text;
 }
 
+#languageSwitch {
+  @apply px-1;
+  @apply py-1;
+  @apply rounded-md;
+  @apply transition-all;
+  @apply duration-200;
+
+  border: solid transparent 1px;
+  color: $text;
+}
+
+/*The Chevron Icon*/
+#c-213 {
+  scale: 0.8;
+}
+
+/*The Language Icon*/
+#l-214 {
+  scale: 0.8;
+}
+
+#sunIcon {
+  scale: 0.8;
+}
+
+#languageSwitch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#languageSwitch:hover {
+  border: solid 1px $text;
+  background-color: $text;
+}
+
+#languageSwitch:hover :is(#c-213, #l-214) {
+  color: $bg;
+}
+
 #navContainer {
   display: flex;
   gap: 1rem;
   align-items: center;
 
+}
+
+#emailContainer a {
+  text-decoration: none;
+
+}
+
+#emailContainer a:hover {
+  text-decoration: underline;
 }
 
 //#navContainer {
