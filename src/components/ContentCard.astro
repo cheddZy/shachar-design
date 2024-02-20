@@ -16,8 +16,9 @@ const {src, alt, ariaDesc} = Astro.props;
 
     .contentCard {
         width: 100%;
-        background-color: grey;
        @apply rounded-md;
+     border: solid $text 1px;
+     @apply bg-slate-500/20
      aspect-ratio: 16/9;
 
     }
