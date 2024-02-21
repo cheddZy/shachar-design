@@ -18,7 +18,7 @@ header {
   width: auto;
   padding: 1rem 12%;
 
-  border-bottom: dotted 1px $accent;
+  border-bottom: dotted 1px $secondary;
 }
 
 header:hover #themeSwitch {
@@ -96,12 +96,12 @@ header:hover #languageSwitch {
 
 }
 
-#emailContainer a {
+.emailContainer a {
   text-decoration: none;
 
 }
 
-#emailContainer a:hover {
+.emailContainer a:hover {
   text-decoration: underline;
 }
 
@@ -129,13 +129,21 @@ header:hover #languageSwitch {
   height: fit-content;
   color: $text;
 }
+
+.emailContainer {
+  display: flex;
+  align-items: center;
+
+}
+
 @media screen and (max-width: 768px) {
   header {
     padding: 0.5rem 6%
   }
-  #emailContainer {
+  #emailHeader {
     display: none;
   }
+
   #navContainer {
     gap: 0;
   }

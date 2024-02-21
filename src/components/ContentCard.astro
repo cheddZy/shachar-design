@@ -2,13 +2,20 @@
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
+import { Image } from 'astro:assets';
 
-const {src, alt, ariaDesc} = Astro.props;
-
+const {src, alt, ariaDesc, underLabel, description} = Astro.props;
 ---
 
 <div class="contentCard">
- <img src={src} alt={alt} aria-description={ariaDesc}>
+    <Image src={src}
+           width='1000'
+           height='1000'
+           alt={alt}
+           aria-description={ariaDesc}
+           aria-label="design"/>
+    <p class="descCard">{description}</p>
+    <h6 class="labelCard">{underLabel}</h6>
 </div>
 
 
@@ -16,10 +23,39 @@ const {src, alt, ariaDesc} = Astro.props;
 
     .contentCard {
         width: 100%;
-       @apply rounded-md;
-     border: solid $text 1px;
-     @apply bg-slate-500/20
-     aspect-ratio: 16/9;
+        border: solid $text 1px;
+        aspect-ratio: 16/9;
+        justify-content: center;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        overflow: clip;
+    }
+
+    img {
+        image-rendering: optimizeQuality;
+        @apply rounded-md;
+        @apply transition-all;
+        display: block;
+        margin-bottom: 0.5rem;
+        border: solid 1px var(--secondary);
+
+    }
+    .descCard {
+        font-size: 0.8rem !important;
+        font-family: "Geist Mono Variable", monospace;
+        font-weight: normal;
+        border: solid 1px var(--accent);
+        background-color: var(--accent);
+        color: var(--bg);
+        @apply px-2;
+        @apply py-[0.2rem];
+        @apply rounded-xl;
+
+    }
+
+    img:hover {
 
     }
 </style>

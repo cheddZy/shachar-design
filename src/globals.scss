@@ -9,6 +9,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Geist Mono Variable';
+  src: url('../public/fonts/GeistMonoVariableVF.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Color Schemes */
 
@@ -37,21 +44,20 @@
   //Light theme fall-back
   --bg: #f4f3ee;
   --secondary: #9e9e9e;
-  --accent: #8d56de;
+  --accent: #9c81e0;
   --text: #0b090a;
 }
 
 [data-theme='dark'] {
   --bg: #0b090a;
   --secondary: #7a7a7a;
-  --accent: #8e57e0;
   --text: #f1f1f1;
 }
 
 [data-theme='light'] {
   --bg: #f4f3ee;
   --secondary: #7a7a7a;
-  --accent: #8d56de;
+  --accent: #3a0ca4;
   --text: #0b090a;
 }
 
