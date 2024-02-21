@@ -8,12 +8,13 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 ---
 
 <a href={href} target="_blank" class="contentCard group">
-    <Image src={src}
+    <div><Image src={src}
            width='1000'
            height='1000'
            alt={alt}
            aria-description={ariaDesc}
            aria-label="design"/>
+    </div>
     <h6 class="transition-opacity duration-200 labelCard opacity-85 group group-hover:opacity-100">{underLabel}</h6>
     <p class="transition-opacity duration-200 descCard opacity-85 group group-hover:opacity-100">{description}</p>
 </a>
@@ -35,13 +36,10 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 
     img {
         image-rendering: optimizeQuality;
-        @apply rounded-md;
         @apply transition-all;
         display: block;
-        margin-bottom: 0.5rem;
-        border: solid 1px var(--secondary);
-        filter: saturate(33%);
-        transition-duration: 200ms;
+        filter: saturate(66%);
+        transition-duration: 500ms;
         width: auto;
         object-fit: contain;
     }
@@ -57,8 +55,35 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
         @apply rounded-xl;
 
     }
+    .contentCard:hover .labelCard::after {
+        content:'-->';
+        opacity: 1;
+        transform: translateX(25%);
+
+    }
+    .labelCard::after {
+        content:'-->';
+        opacity: 0;
+        position: absolute;
+        transform: translateX(-100%);
+        @apply transition-all
+    }
 
     img:hover {
         filter: saturate(100%);
+        scale: 1.02;
     }
+
+    div:has(img) {
+        overflow:hidden;
+        border: solid 1px var(--secondary);
+        @apply rounded-md;
+        @apply transition-shadow;
+    }
+    div:has(img):hover {
+        box-shadow: 1px 16px 63px 1px rgba(100, 76, 196, 0.25);
+        //-webkit-box-shadow: 1px 16px 63px 1px rgba(142,118,237,0.25);
+        //-moz-box-shadow: 1px 16px 63px 1px rgba(142,118,237,0.25);
+    }
+
 </style>

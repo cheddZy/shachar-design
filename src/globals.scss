@@ -7,14 +7,14 @@
 
 @font-face {
   font-family: 'Geist Variable';
-  src: url('/fonts/GeistVariableVF.woff2') format('woff2');
+  src: url('../public/fonts/GeistVariableVF.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono Variable';
-  src: url('/fonts/GeistMonoVariableVF.woff2') format('woff2');
+  src: url('../public/fonts/GeistMonoVariableVF.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@
 }
 
 [data-theme='dark'] {
-  --bg: #0b090a;
+  --bg: #18181B;
   --secondary: #7a7a7a;
   --text: #f1f1f1;
 }
