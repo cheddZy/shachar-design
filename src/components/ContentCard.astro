@@ -14,8 +14,8 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
            alt={alt}
            aria-description={ariaDesc}
            aria-label="design"/>
-    <p class="transition-opacity duration-200 descCard opacity-85 group group-hover:opacity-100">{description}</p>
     <h6 class="transition-opacity duration-200 labelCard opacity-85 group group-hover:opacity-100">{underLabel}</h6>
+    <p class="transition-opacity duration-200 descCard opacity-85 group group-hover:opacity-100">{description}</p>
 </a>
 
 
@@ -30,6 +30,7 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
         display: flex;
         flex-direction: column;
         position: relative;
+        gap: 0.25rem;
     }
 
     img {
