@@ -4,19 +4,19 @@ import '../styles.scss';
 import '../themes.scss';
 import { Image } from 'astro:assets';
 
-const {src, alt, ariaDesc, underLabel, description} = Astro.props;
+const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 ---
 
-<div class="contentCard">
+<a href={href} target="_blank" class="contentCard group">
     <Image src={src}
            width='1000'
            height='1000'
            alt={alt}
            aria-description={ariaDesc}
            aria-label="design"/>
-    <p class="descCard">{description}</p>
-    <h6 class="labelCard">{underLabel}</h6>
-</div>
+    <p class="transition-opacity duration-200 descCard opacity-85 group group-hover:opacity-100">{description}</p>
+    <h6 class="transition-opacity duration-200 labelCard opacity-85 group group-hover:opacity-100">{underLabel}</h6>
+</a>
 
 
 <style>
@@ -26,7 +26,7 @@ const {src, alt, ariaDesc, underLabel, description} = Astro.props;
         border: solid $text 1px;
         aspect-ratio: 16/9;
         justify-content: center;
-        align-items: start;
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
         margin-bottom: 1rem;
@@ -40,6 +40,8 @@ const {src, alt, ariaDesc, underLabel, description} = Astro.props;
         display: block;
         margin-bottom: 0.5rem;
         border: solid 1px var(--secondary);
+        filter: saturate(33%);
+        transition-duration: 200ms;
 
     }
     .descCard {
@@ -56,6 +58,6 @@ const {src, alt, ariaDesc, underLabel, description} = Astro.props;
     }
 
     img:hover {
-
+        filter: saturate(100%);
     }
 </style>

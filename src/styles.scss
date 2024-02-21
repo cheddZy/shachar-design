@@ -154,5 +154,8 @@ header:hover #languageSwitch {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
   }
+  .contentCard img {
+    filter: none !important;
+  }
 }
 
