@@ -3,31 +3,35 @@ import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
 import ContentCard from "./ContentCard.astro";
+import ShotsTemp from "../images/200shots_temp.png"
+import Shots207 from "../images/207shots_so.png"
+import Shots208 from "../images/208shots_so.png"
+import Shots209 from "../images/209shots_so.png"
 ---
 
 
 <div id="contentContainer">
     <section id="cards">
         <ContentCard alt="Alt text!"
-                     src='/images/207shots_so.png'
+                     src={Shots207}
                      underLabel="TFConnect Website"
                      description="UIUX, Web Design"
                      href=https://www.tfconnect.org
         />
         <ContentCard alt="Alt text!"
-                     src='/public/images/209shots_so.png'
+                     src={Shots209}
                      underLabel="Amper Software - TF:S2"
                      description="Game UI Design, Brand Design"
                      href=https://twitter.com/TeamFortressS2
         />
         <ContentCard alt="Alt text!"
-                     src='/public/images/208shots_so.png'
+                     src={Shots208}
                      underLabel="NIN - Pretty Hate Machine (Assignment)"
                      description="Composition"
                      href=https://twitter.com/TeamFortressS2
         />
         <ContentCard alt="Alt text!"
-                     src='/public/images/200shots_temp.png'
+                     src={ShotsTemp}
                      underLabel="Temporary Work Collection"
                      description="Other, Behance"
                      href=https://www.behance.net/gallery/191861431/TEMPORARY-Workfolio
