@@ -23,15 +23,15 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 
     .contentCard {
         width: 100%;
-        border: solid $text 1px;
+        //border: solid $text 1px;
         aspect-ratio: 16/9;
         justify-content: center;
         align-items: flex-start;
         display: flex;
         flex-direction: column;
-        margin-bottom: 1rem;
-        overflow: clip;
-        padding: 4rem;
+        position: relative;
+
+        border: firebrick 1px dotted;
     }
 
     img {
@@ -43,7 +43,8 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
         border: solid 1px var(--secondary);
         filter: saturate(33%);
         transition-duration: 200ms;
-
+        width: auto;
+        object-fit: contain;
     }
     .descCard {
         font-size: 0.8rem !important;
