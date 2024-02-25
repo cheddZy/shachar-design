@@ -64,7 +64,7 @@ import { Image } from "astro:assets";
             </h2>
             <div id="workStatus">
                 <div id="workLit"></div>
-                <p>Open for work</p>
+                <a id="getInTouch" href="mailto:info@cheddzy.com" target="_blank">Open for work | <span id="contacts">Get in touch!</span></a>
             </div>
         </div>
         <div class="heroRight">
@@ -108,12 +108,22 @@ import { Image } from "astro:assets";
         height: 1rem;
         border-radius: 1rem;
     }
+    #contacts {
+        font-weight: 600;
+    }
+
 
     #workStatus {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-top: 1rem;
+        background-color: var(--text);
+        color: var(--bg);
+        width: fit-content;
+        border-radius: 0.618rem;
+        @apply px-4;
+        @apply py-2;
     }
 
     section {
@@ -130,8 +140,6 @@ import { Image } from "astro:assets";
     }
     .heroLeft {
         width: auto;
-
-
     }
     .heroRight {
         display: flex;
@@ -169,6 +177,12 @@ import { Image } from "astro:assets";
         }
         .heroRight {
             justify-content: flex-start;
+            align-items: center;
+        }
+        .heroLeft {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             align-items: center;
         }
     }
