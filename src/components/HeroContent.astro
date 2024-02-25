@@ -40,6 +40,7 @@ import { Image } from "astro:assets";
 
         clockTime.innerText = hour + ":" + min + ":" + sec + " " + midday;
     }
+    setInterval(function(){currentTime()}, 1000)
 
     function fixTime(set) {
         if (set < 10) {
@@ -140,9 +141,12 @@ import { Image } from "astro:assets";
     }
     .heroLeft {
         width: auto;
+
     }
     .heroRight {
         display: flex;
+        overflow: clip;
+
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
