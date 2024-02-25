@@ -11,29 +11,42 @@ import Shots209 from "../images/209shots_so.png"
 
 
 <div id="contentContainer">
+
     <section id="cards">
-        <ContentCard alt="Screenshot of the TFConnect website"
+        <ContentCard alt="The TFConnect website"
                      src={Shots207}
                      underLabel="TFConnect Website"
-                     description="UIUX, Web Design"
+                     date="Nov 2023"
                      href=https://www.tfconnect.org
         />
-        <ContentCard alt="Image of the TF:S2 project branding"
+        <ContentCard alt="The TF:S2 project branding"
                      src={Shots209}
                      underLabel="Amper Software - TF:S2"
-                     description="Game UI Design, Brand Design"
+                     date="Nov 2023"
                      href=https://twitter.com/TeamFortressS2
         />
         <ContentCard alt="Redesign of the Nine Inch Nails Album 'Pretty Hate Machine'."
                      src={Shots208}
-                     underLabel="NIN - Pretty Hate Machine (Assignment)"
-                     description="Composition"
+                     underLabel="CD Cover Redesign (Assignment)"
+                     date="Nov 2023"
         />
-        <ContentCard alt="Image with the lettering 'work in progress'"
+        <ContentCard alt="'work in progress' cover. Temporary."
                      src={ShotsTemp}
                      underLabel="Temporary Work Collection"
-                     description="Other, Behance"
+                     date="Nov 2023"
                      href=https://www.behance.net/gallery/191861431/TEMPORARY-Workfolio
+        />
+        <ContentCard alt="'work in progress' cover. Temporary."
+                     src={ShotsTemp}
+                     underLabel="Temporary Work Collection"
+                     date="Nov 2023"
+
+        />
+        <ContentCard alt="'work in progress' cover. Temporary."
+                     src={ShotsTemp}
+                     underLabel="Temporary Work Collection"
+                     date="Nov 2023"
+
         />
 
 
@@ -43,22 +56,32 @@ import Shots209 from "../images/209shots_so.png"
 <style>
 
     section {
-        width: 100%;
-        height: fit-content;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem 1rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem 1rem;
         grid-template-areas:
-    ". . "
-    ". .";
+    ". . . "
+    ". . .";
 
+    }
+
+    @media screen and (max-width: 1308px) {
+        section {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1rem;
+            grid-template-areas:
+    ". ."
+    ". .";
+        }
     }
 
     @media screen and (max-width: 768px) {
         section {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            gap: 1rem 1rem;
+            grid-template-areas:
+    "."
+    ".";
         }
     }
 

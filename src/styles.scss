@@ -3,11 +3,11 @@
 @tailwind base;
 @import 'globals.scss';
 
-//* {
-//  @apply border-2;
-//  @apply border-cyan-100;
-//}
-
+/* * {
+  @apply border-2;
+  @apply border-cyan-100;
+}
+*/
 header {
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
 
   width: auto;
-  padding: 1rem 12%;
+  padding: 1rem 6%;
 
   border-bottom: dotted 1px $secondary;
 }
@@ -105,20 +105,20 @@ header:hover #languageSwitch {
   text-decoration: underline;
 }
 
-//#navContainer {
-//  display: flex;
-//  gap: 0.5rem;
-//
-//  align-items: center;
-//}
-//
-//.navItem :has(a) {
-//  background-color: firebrick;
-//}
+/*#navContainer {
+  display: flex;
+  gap: 0.5rem;
 
+  align-items: center;
+}
+
+.navItem :has(a) {
+  background-color: firebrick;
+}
+*/
 
 #contentContainer {
-  margin-inline: 12%;
+  margin-inline: 6%;
   padding: 2rem 0;
   font-weight: bold;
   width: auto;
@@ -160,3 +160,7 @@ header:hover #languageSwitch {
   }
 }
 
+#portfolioName {
+  display:flex;
+  flex-direction: row;
+}

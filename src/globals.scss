@@ -46,25 +46,33 @@
 
   //Light theme fall-back
   --bg: #f4f3ee;
+  --bg-secondary: #c9c7c7;
   --secondary: #9e9e9e;
   --accent: #9c81e0;
   --text: #0b090a;
+  --snoopingAroundAreWe: #c2c2c2
 }
 
 [data-theme='dark'] {
   --bg: #18181B;
+  --bg-secondary: #363642;
   --secondary: #7a7a7a;
   --text: #f1f1f1;
+  --snoopingAroundAreWe: #2f2f2f
 }
 
 [data-theme='light'] {
   --bg: #f4f3ee;
+  --bg-secondary: #c9c7c7;
   --secondary: #7a7a7a;
   --accent: #3a0ca4;
   --text: #0b090a;
+  --snoopingAroundAreWe: #c2c2c2
 }
 
 $bg: var(--bg);
+$bg2: var(--bg-secondary);
+$gray: var(--snoopingAroundAreWe);
 $secondary: var(--secondary);
 $accent: var(--accent);
 $text: var(--text);
@@ -103,14 +111,16 @@ small {
 }
 
 
-//Testing for Types
-//h1:before {content: 'h1'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//h2:before {content: 'h2'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//h3:before {content: 'h3'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//h4:before {content: 'h4'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//h5:before {content: 'h5'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//h6:before {content: 'h6'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
-//p:before {content: 'p'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+/*
+Testing for Types
+h1:before {content: 'h1'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+h2:before {content: 'h2'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+h3:before {content: 'h3'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+h4:before {content: 'h4'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+h5:before {content: 'h5'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+h6:before {content: 'h6'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+p:before {content: 'p'; font-size: calc(var(--p) / var(--font-scale)); margin-right: 2px; color: gray;}
+*/
 
 
 *, *::before, *::after {

@@ -4,19 +4,28 @@ import '../styles.scss';
 import '../themes.scss';
 import { Image } from 'astro:assets';
 
-const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
+const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
 ---
 
+
 <a href={href} target="_blank" class="contentCard group">
-    <div><Image src={src}
-           width='1000'
-           height='1000'
-           alt={alt}
-           aria-description={ariaDesc}
-           aria-label="design"/>
+    <div class="cardImage">
+        <div>
+            <Image src={src}
+                   width='1000'
+                   height='1000'
+                   alt={alt}
+                   aria-description={ariaDesc}
+                   aria-label="design"
+                   loading="eager"
+                   class="group group-hover:scale-[1.02]"
+            />
+        </div>
+        <div class="cardContext group">
+            <p class="labelCard group">{underLabel}</p>
+            <small class="">{date}</small>
+        </div>
     </div>
-    <h6 class="transition-opacity duration-200 labelCard opacity-85 group group-hover:opacity-100">{underLabel}</h6>
-    <p class="transition-opacity duration-200 descCard opacity-85 group group-hover:opacity-100">{description}</p>
 </a>
 
 
@@ -24,14 +33,43 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 
     .contentCard {
         width: 100%;
-        //border: solid $text 1px;
-        aspect-ratio: 16/9;
-        justify-content: center;
-        align-items: flex-start;
-        display: flex;
         flex-direction: column;
         position: relative;
         gap: 0.25rem;
+        overflow: clip;
+        border: solid 1px var(--snoopingAroundAreWe);
+        @apply rounded-md;
+    }
+
+    .cardContext {
+        width: 100%;
+        height: 32px;
+        position: absolute;
+        bottom: 8px;
+        padding: 1rem;
+        white-space: nowrap;
+        z-index: 1;
+        color: #f1f1f1;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cardImage {
+        overflow: clip;
+    }
+
+    .cardImage::after {
+        content: "";
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        bottom: -12px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
     }
 
     img {
@@ -43,26 +81,23 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
         width: auto;
         object-fit: contain;
     }
-    .descCard {
-        font-size: 0.8rem !important;
-        font-family: "Geist Mono Variable", monospace;
-        font-weight: normal;
-        border: solid 1px var(--accent);
-        background-color: var(--accent);
-        color: var(--bg);
-        @apply px-2;
-        @apply py-[0.2rem];
-        @apply rounded-xl;
 
-    }
     .contentCard:hover .labelCard::after {
-        content:'-->';
+        content: '-->';
         opacity: 1;
         transform: translateX(25%);
 
     }
+    .labelCard {
+        font-size: small !important;
+        font-weight: 500;
+    }
+    small {
+        font-weight: 500;
+    }
+
     .labelCard::after {
-        content:'-->';
+        content: '-->';
         opacity: 0;
         position: absolute;
         transform: translateX(-100%);
@@ -71,19 +106,15 @@ const {href, src, alt, ariaDesc, underLabel, description} = Astro.props;
 
     img:hover {
         filter: saturate(100%);
-        scale: 1.02;
     }
 
     div:has(img) {
-        overflow:hidden;
-        border: solid 1px var(--secondary);
-        @apply rounded-md;
+        overflow: hidden;
         @apply transition-shadow;
     }
+
     div:has(img):hover {
         box-shadow: 1px 16px 63px 1px rgba(100, 76, 196, 0.25);
-        //-webkit-box-shadow: 1px 16px 63px 1px rgba(142,118,237,0.25);
-        //-moz-box-shadow: 1px 16px 63px 1px rgba(142,118,237,0.25);
     }
 
 </style>

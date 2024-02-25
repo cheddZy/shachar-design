@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MouseTest from "../components/MouseTest.astro";
+import Shots_Temp from '../images/209shots_so.png'
+import { Image } from "astro:assets";
+---
+
+<Layout title="Shachar - Design Portfolio">
+    <MouseTest />
+
+    <Header />
+    <section>
+        <ul>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
+
+        </ul>
+    </section>
+    <Footer />
+</Layout>
+
+
+<style>
+
+    ul {
+        padding: 0.5rem;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .imgContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        aspect-ratio: 9/16;
+    }
+
+    .imgContainer img {
+        object-fit: cover;
+        min-height: 100%;
+        min-width: 100%;
+
+    }
+
+    @media screen and (max-width: 1200px) {
+        div {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        div {
+           grid-template-columns: 1fr;
+        }
+    }
+
+</style>
