@@ -1,16 +1,19 @@
 ---
+import Shots_Temp from "../images/209shots_so.png";
+import { Image } from "astro:assets";
+
+const {src, alt, ariaDesc, date} = Astro.props;
+
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
-import { Image } from 'astro:assets';
 
-const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
 ---
 
 
-<a href={href} target="_blank" class="contentCard group">
-    <div class="cardImage">
-        <div>
+<li class="contentPhoto">
+    <div class="photoContainer">
+
             <Image src={src}
                    width='1000'
                    height='1000'
@@ -18,20 +21,18 @@ const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
                    aria-description={ariaDesc}
                    aria-label="design"
                    loading="eager"
-                   class="group group-hover:scale-[1.02]"
             />
-        </div>
-        <div class="cardContext group">
-            <p class="labelCard group">{underLabel}</p>
+
+        <div class="photoContext">
             <small class="">{date}</small>
         </div>
     </div>
-</a>
+</li>
 
 
 <style>
 
-    .contentCard {
+    .contentPhoto {
         width: 100%;
         flex-direction: column;
         position: relative;
@@ -41,7 +42,7 @@ const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
         @apply rounded-md;
     }
 
-    .cardContext {
+    .photoContext {
         width: 100%;
         height: 32px;
         position: absolute;
@@ -57,63 +58,38 @@ const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
         align-items: center;
     }
 
-    .cardImage {
+    .photoContainer {
+        aspect-ratio: 9/16;
         overflow: clip;
     }
 
-    .cardImage::after {
+    .photoContainer::after {
         content: "";
         background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
         position: absolute;
         width: 100%;
         height: 100px;
         bottom: -12px;
-        border-bottom-left-radius: 6px;
-        border-bottom-right-radius: 6px;
     }
 
     img {
         image-rendering: optimizeQuality;
         @apply transition-all;
         display: block;
-        filter: saturate(66%);
         transition-duration: 500ms;
         width: auto;
-        object-fit: contain;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
     }
 
-    .contentCard:hover .labelCard::after {
-        content: '-->';
-        opacity: 1;
-        transform: translateX(25%);
-    }
-    .labelCard {
-        font-size: small !important;
-        font-weight: 500;
-    }
     small {
         font-weight: 500;
     }
 
-    .labelCard::after {
-        content: '-->';
-        opacity: 0;
-        position: absolute;
-        transform: translateX(-100%);
-        @apply transition-all
-    }
-
-    img:hover {
-        filter: saturate(100%);
-    }
-
     div:has(img) {
         overflow: hidden;
-        @apply transition-shadow;
-    }
 
-    div:has(img):hover {
-        box-shadow: 1px 16px 63px 1px rgba(100, 76, 196, 0.25);
     }
 
 </style>

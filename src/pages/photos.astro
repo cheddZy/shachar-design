@@ -5,32 +5,42 @@ import Footer from "../components/Footer.astro";
 import MouseTest from "../components/MouseTest.astro";
 import Shots_Temp from '../images/209shots_so.png'
 import { Image } from "astro:assets";
+import PhotoContainer from "../components/PhotoContainer.astro";
 ---
 
 <Layout title="Shachar - Design Portfolio">
-    <MouseTest />
+    <MouseTest/>
 
-    <Header />
+    <Header/>
     <section>
         <ul>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-            <li class="imgContainer"><Image alt="" src={Shots_Temp} /></li>
-
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
+            <PhotoContainer src=https://images.unsplash.com/photo-1708583625765-e02e3fb6621d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D
+                            date="Nov 2023"
+                            alt=""/>
         </ul>
     </section>
-    <Footer />
+    <Footer/>
 </Layout>
 
 
@@ -42,29 +52,22 @@ import { Image } from "astro:assets";
         gap: 0.5rem;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .imgContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        aspect-ratio: 9/16;
-    }
 
-    .imgContainer img {
-        object-fit: cover;
-        min-height: 100%;
-        min-width: 100%;
-
-    }
-
-    @media screen and (max-width: 1200px) {
-        div {
-            grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 1300px) {
+        ul {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
+
+    @media screen and (max-width: 1000px) {
+        ul {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
     @media screen and (max-width: 768px) {
-        div {
-           grid-template-columns: 1fr;
+        ul {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
