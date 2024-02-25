@@ -135,7 +135,7 @@ import { Image } from "astro:assets";
         justify-content: flex-start;
         align-items: flex-end;
         height: 90vh;
-        background: linear-gradient(180deg, var(--bg), var(--bg-secondary));
+        background: linear-gradient(var(--bg), rgba(145, 128, 196, 0.5));
 
         box-sizing: border-box;
     }
@@ -163,7 +163,11 @@ import { Image } from "astro:assets";
         border-bottom: dotted 1px var(--secondary);
     }
 
-
+    @media screen and (max-width: 1155px) {
+        h2 {
+            font-size: var(--h3) !important;
+        }
+    }
 
     @media screen and (max-width: 768px) {
         h2 {
