@@ -2,8 +2,7 @@
 import '../globals.scss';
 import '../styles.scss';
 import '../themes.scss';
-import { Image } from "astro:assets";
-
+import {Image} from "astro:assets";
 ---
 
 <script>
@@ -14,8 +13,9 @@ import { Image } from "astro:assets";
     function updateWindowSize() {
         winPrint.innerHTML = windowWidth + 'x' + windowHeight;
     }
+
     // Executes
-    setInterval(function() {
+    setInterval(function () {
 
             windowHeight = window.innerHeight;
             windowWidth = window.innerWidth;
@@ -25,6 +25,7 @@ import { Image } from "astro:assets";
 
     // TODO: Clock
     const clockTime = document.getElementById('clockTime');
+
     function currentTime() {
         let date = new Date();
 
@@ -33,20 +34,22 @@ import { Image } from "astro:assets";
             sec = date.getSeconds(),
 
             midday = (hour >= 12) ? "PM" : "AM";
-            hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
-            hour = fixTime(hour);
-            min = fixTime(min);
-            sec = fixTime(sec);
+        hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+        hour = fixTime(hour);
+        min = fixTime(min);
+        sec = fixTime(sec);
 
         clockTime.innerText = hour + ":" + min + ":" + sec + " " + midday;
     }
-    setInterval(function(){currentTime()}, 1000)
+
+    setInterval(function () {
+        currentTime()
+    }, 1000)
 
     function fixTime(set) {
         if (set < 10) {
             return "0" + set;
-        }
-        else {
+        } else {
             return set;
         }
     }
@@ -61,26 +64,101 @@ import { Image } from "astro:assets";
 <div id="heroContainer">
     <section>
         <div class="heroLeft">
-            <h2>
+            <h3>
                 Detail-oriented UI Designer focused on responsive &
                 <br> user-centered products.
-            </h2>
+            </h3>
             <div id="workStatus">
                 <div id="workLit"></div>
-                <a id="getInTouch" href="mailto:info@cheddzy.com" target="_blank">Open for work | <span id="contacts">Get in touch!</span></a>
+                <div id="getInTouch">Open for work</div>
             </div>
         </div>
         <div class="heroRight">
             <small id="clockTime"></small>
             <small id="windowSize"></small>
+            <div id="iconGrid">
+                <div id="iconLinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title>
+                            Linkedin</title>
+                        <path d="M2 1C1.44772 1 1 1.44772 1 2V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V2C14 1.44772 13.5523 1 13 1H2ZM3.05 6H4.95V12H3.05V6ZM5.075 4.005C5.075 4.59871 4.59371 5.08 4 5.08C3.4063 5.08 2.925 4.59871 2.925 4.005C2.925 3.41129 3.4063 2.93 4 2.93C4.59371 2.93 5.075 3.41129 5.075 4.005ZM12 8.35713C12 6.55208 10.8334 5.85033 9.67449 5.85033C9.29502 5.83163 8.91721 5.91119 8.57874 6.08107C8.32172 6.21007 8.05265 6.50523 7.84516 7.01853H7.79179V6.00044H6V12.0047H7.90616V8.8112C7.8786 8.48413 7.98327 8.06142 8.19741 7.80987C8.41156 7.55832 8.71789 7.49825 8.95015 7.46774H9.02258C9.62874 7.46774 10.0786 7.84301 10.0786 8.78868V12.0047H11.9847L12 8.35713Z"
+                              fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div id="iconGitHub">:</div>
+                <div id="iconBehance">.</div>
+                <div id="iconDribbble">@</div>
+            </div>
+
+            <!--
+            TODO: Social media grid links, styled glassmorphism / new style? Clean aesthetic. Take inspiration from shadcn/ui maybe.
+            "# # # # : :"
+            "# # # # : :"
+            ". . . @ @ @"
+            "X G G G G X"
+
+            TODO: GRID LAYOUT:
+            # = LinkedIn
+            : = Github
+            . = Behance
+            @ = Dribbble
+            G = Gmail
+            X = None, empty
+            -->
         </div>
     </section>
 </div>
 
 <style>
+    #iconGrid {
+        display: grid;
+        justify-content: center;
+        width: 100%;
+        gap: 5px 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+                'Lin Lin Lin Lin Git Git'
+                'Beh Beh Beh Beh Dri Dri'
+
+    }
+
+    #iconGrid :where(#iconGitHub, #iconDribbble, #iconLinkedIn, #iconBehance, #iconContact) {
+        @apply px-4;
+        @apply py-3;
+        @apply rounded-lg;
+        color: var(--bg);
+        background-color: var(--text);
+    }
+
+    #iconLinkedIn {
+        grid-area: Lin;
+        width: 100%;
+
+    }
+
+    #iconGitHub {
+        grid-area: Git;
+        width: 100%;
+
+    }
+
+    #iconBehance {
+        grid-area: Beh;
+        width: 100%;
+
+    }
+
+    #iconDribbble {
+        grid-area: Dri;
+        width: 100%;
+
+    }
+
     button {
         margin-top: 3rem;
     }
+
     button a {
         @apply px-4;
         @apply py-2;
@@ -95,22 +173,26 @@ import { Image } from "astro:assets";
         font-size: var(--h6);
 
     }
+
     #heroContainer {
         padding: 4rem 1rem 1rem 1rem;
     }
 
-    h2 {
+    h3 {
         font-weight: 500;
     }
+
     small {
         font-family: "Geist Mono Variable", monospace;
     }
+
     #workLit {
         background-color: #39cc68;
         width: 1rem;
         height: 1rem;
         border-radius: 1rem;
     }
+
     #contacts {
         font-weight: 600;
     }
@@ -140,10 +222,12 @@ import { Image } from "astro:assets";
         background: linear-gradient(var(--bg), rgba(145, 128, 196, 0.5));
         box-sizing: border-box;
     }
+
     .heroLeft {
         width: auto;
 
     }
+
     .heroRight {
         display: flex;
         overflow: clip;
@@ -160,26 +244,30 @@ import { Image } from "astro:assets";
     div img {
         border-radius: 0.25rem;
     }
+
     #heroContainer {
         border-bottom: dotted 1px var(--secondary);
     }
 
     @media screen and (max-width: 1155px) {
-        h2 {
-            font-size: var(--h3) !important;
+        h3 {
+            font-size: var(--h4) !important;
         }
+
         section {
             padding: 2rem;
         }
     }
 
     @media screen and (max-width: 768px) {
-        h2 {
+        h3 {
             font-size: var(--h4) !important;
         }
+
         .headerContent {
             display: none;
         }
+
         section {
             flex-direction: column-reverse;
             justify-content: space-between;
@@ -187,16 +275,19 @@ import { Image } from "astro:assets";
             border-radius: 0 0 1rem 1rem;
             height: 85vh;
         }
+
         .heroRight {
             justify-content: flex-start;
             align-items: center;
         }
+
         .heroLeft {
             display: flex;
             flex-direction: column;
             gap: 2rem;
             align-items: center;
         }
+
         #heroContainer {
             padding-top: 1rem;
         }

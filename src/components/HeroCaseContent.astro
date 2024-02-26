@@ -1,0 +1,167 @@
+---
+import '../globals.scss';
+import '../styles.scss';
+import '../themes.scss';
+import { Image } from "astro:assets";
+
+---
+<div id="heroContainer">
+    <section>
+        <div class="heroLeft">
+            <h3>
+                Detail-oriented UI Designer focused on responsive &
+                <br> user-centered products.
+            </h3>
+            <div id="workStatus">
+                <div id="workLit"></div>
+                <div id="getInTouch">Open for work</div>
+            </div>
+        </div>
+        <div class="heroRight">
+            <small id="clockTime"></small>
+            <small id="windowSize"></small>
+            <!--TODO: Social media grid links, styled glassmorphism / new style? Clean aesthetic. Take inspiration from shadcn/ui maybe.-->
+            "# # # # : :"
+            "# # # # : :"
+            ". . . @ @ @"
+            "X G G G G X"
+            <!--
+            TODO: GRID LAYOUT:
+            # = LinkedIn
+            : = Github
+            . = Behance
+            @ = Dribbble
+            G = Gmail
+            X = None, empty
+            -->
+        </div>
+    </section>
+</div>
+
+<style>
+    button {
+        margin-top: 3rem;
+    }
+    button a {
+        @apply px-4;
+        @apply py-2;
+
+        border-radius: 0.5rem;
+
+        font-weight: 600;
+
+        background-color: var(--text);
+        color: var(--bg);
+
+        font-size: var(--h6);
+
+    }
+    #heroContainer {
+        padding: 4rem 1rem 1rem 1rem;
+    }
+
+    h3 {
+        font-weight: 500;
+    }
+    small {
+        font-family: "Geist Mono Variable", monospace;
+    }
+    #workLit {
+        background-color: #39cc68;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 1rem;
+    }
+    #contacts {
+        font-weight: 600;
+    }
+
+
+    #workStatus {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        background-color: var(--text);
+        color: var(--bg);
+        width: fit-content;
+        border-radius: 0.618rem;
+        @apply px-4;
+        @apply py-2;
+    }
+
+    section {
+        border-radius: 0 0 2rem 2rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        height: 83vh;
+        background: linear-gradient(var(--bg), rgba(145, 128, 196, 0.5));
+        box-sizing: border-box;
+    }
+    .heroLeft {
+        width: auto;
+
+    }
+    .heroRight {
+        display: flex;
+        overflow: clip;
+
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 12rem;
+        gap: 1rem;
+        height: 100%;
+
+    }
+
+    div img {
+        border-radius: 0.25rem;
+    }
+    #heroContainer {
+        border-bottom: dotted 1px var(--secondary);
+    }
+
+    @media screen and (max-width: 1155px) {
+        h3 {
+            font-size: var(--h4) !important;
+        }
+        section {
+            padding: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h3 {
+            font-size: var(--h4) !important;
+        }
+        .headerContent {
+            display: none;
+        }
+        section {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 1rem 1rem;
+            height: 85vh;
+        }
+        .heroRight {
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .heroLeft {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+        #heroContainer {
+            padding-top: 1rem;
+        }
+    }
+
+
+</style>
