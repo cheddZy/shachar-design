@@ -22,11 +22,11 @@ header {
 }
 
 header:hover #themeSwitch {
-  border: solid 1px $text;
+  border: solid 1px var(--text-25);
 }
 
 header:hover #languageSwitch {
-  border: solid 1px $text;
+  border: solid 1px var(--text-25);
 }
 
 
@@ -40,8 +40,8 @@ header:hover #languageSwitch {
 #themeSwitch {
   @apply px-1;
   @apply py-1;
-  @apply rounded-md;
-  @apply transition-all;
+  @apply rounded-lg;
+  @apply transition-colors;
   @apply duration-200;
 
   border: solid transparent 1px;
@@ -52,7 +52,7 @@ header:hover #languageSwitch {
   @apply px-1;
   @apply py-1;
   @apply rounded-md;
-  @apply transition-all;
+  @apply transition-colors;
   @apply duration-200;
 
   border: solid transparent 1px;

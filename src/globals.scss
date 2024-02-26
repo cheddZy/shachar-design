@@ -46,31 +46,44 @@
 
   //Light theme fall-back
   --bg: #f4f3ee;
+  --bg-50: rgba(245, 244, 240, 0.5);
   --bg-secondary: #c9c7c7;
   --secondary: #9e9e9e;
   --accent: #9c81e0;
   --text: #0b090a;
+  --text-10: rgba(10, 8, 9, 0.1);
+  --text-25: rgba(10, 8, 9, 0.25);
+  --text-50: rgba(10, 8, 9, 0.5);
   --snoopingAroundAreWe: #c2c2c2
 }
 
 [data-theme='dark'] {
   --bg: #18181B;
+  --bg-50: rgba(25, 25, 28, 0.5);
   --bg-secondary: #363642;
   --secondary: #7a7a7a;
   --text: #f1f1f1;
+  --text-10: rgba(245, 244, 240, 0.1);
+  --text-25: rgba(245, 244, 240, 0.25);
+  --text-50: rgba(245, 244, 240, 0.5);
   --snoopingAroundAreWe: #2f2f2f
 }
 
 [data-theme='light'] {
   --bg: #f4f3ee;
+  --bg-50: rgba(245, 244, 240, 0.5);
   --bg-secondary: #c9c7c7;
   --secondary: #7a7a7a;
   --accent: #3a0ca4;
   --text: #0b090a;
+  --text-10: rgba(10, 8, 9, 0.1);
+  --text-25: rgba(10, 8, 9, 0.25);
+  --text-50: rgba(10, 8, 9, 0.5);
   --snoopingAroundAreWe: #c2c2c2
 }
 
 $bg: var(--bg);
+$bg-50: var(--bg-50);
 $bg2: var(--bg-secondary);
 $gray: var(--snoopingAroundAreWe);
 $secondary: var(--secondary);
