@@ -77,6 +77,11 @@ import { Image } from "astro:assets";
 
 <div id="heroContainer">
     <section>
+        <svg class="asterisk" width="400px" height="400px" viewBox="0 0 2000 2000"
+             fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><rect id="Artboard1" x="0" y="0" width="2000" height="2000" fill="none"/>
+            <clipPath id="_clip1"><rect x="0" y="0" width="2000" height="2000"/></clipPath>
+            <g clip-path="url(#_clip1)">
+                <path d="M726.086,2000l547.828,0l0,-519.425l449.233,255.958l276.853,-475.351l-449.233,-261.182l449.233,-261.182l-276.853,-475.351l-449.233,261.182l0,-524.649l-547.828,-0l-0,524.649l-449.233,-261.182l-276.853,475.351l449.233,261.182l-449.233,261.182l276.853,475.351l449.233,-255.958l-0,519.425Z" fill-rule="nonzero"/></g></svg>
         <div class="heroLeft">
             <div class="hlTop">
                 <small>WELCOME</small>
@@ -146,6 +151,21 @@ import { Image } from "astro:assets";
 </div>
 
 <style>
+    .asterisk {
+        position: absolute;
+        z-index: -1;
+        fill: var(--accent);
+        opacity: 0.25;
+        animation: spin 72s infinite linear;
+    }
+    @keyframes spin {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
     .hlTop {
         display: flex;
         flex-direction: row;
@@ -156,7 +176,7 @@ import { Image } from "astro:assets";
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 5px;
         width: 8rem;
         font-family: "Geist Mono Variable", monospace;
@@ -290,6 +310,7 @@ import { Image } from "astro:assets";
         height: 83vh;
         background: linear-gradient(transparent, rgba(114, 104, 203, 0.5));
         box-sizing: border-box;
+        overflow: clip;
     }
 
     .heroLeft {
@@ -336,6 +357,9 @@ import { Image } from "astro:assets";
             grid-template-rows: 1fr 1fr;
             grid-template-areas:
                 'Lin Lin Lin' 'Beh Dri Git'
+        }
+        h2 {
+            font-size: var(--h3) !important;
         }
     }
 
@@ -419,6 +443,10 @@ import { Image } from "astro:assets";
 
         .hlTop {
             display: none;
+        }
+        .asterisk {
+            top: 275px;
+            width: 50vw;
         }
     }
 
