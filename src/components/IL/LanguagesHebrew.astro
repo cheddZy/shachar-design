@@ -9,17 +9,19 @@ import ContentCard from "../ContentCard.astro";
 
 <div id="languageContainer" class="group">
     <button class="group" id="languageSwitch">
-        <svg id="l-214" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-             class="lucide lucide-languages">
-            <path d="m5 8 6 6"/>
-            <path d="m4 14 6-6 2-3"/>
-            <path d="M2 5h12"/>
-            <path d="M7 2h1"/>
-            <path d="m22 22-5-10-5 10"/>
-            <path d="M14 18h6"/>
-        </svg>
-        <ChevronDown class="group group-hover:rotate-180 transition-transform duration-200" id="c-213" size="24"
+        <a href="/">
+             <svg id="l-214" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-languages">
+                 <path d="m5 8 6 6"/>
+                 <path d="m4 14 6-6 2-3"/>
+                 <path d="M2 5h12"/>
+                 <path d="M7 2h1"/>
+                 <path d="m22 22-5-10-5 10"/>
+                 <path d="M14 18h6"/>
+             </svg>
+        </a>
+        <ChevronDown class="chevron group group-hover:rotate-180 transition-transform duration-200" id="c-213" size="24"
                      stroke-width="5pt"/>
     </button>
     <ul id="langaugeSelection" class="group">
@@ -62,9 +64,6 @@ import ContentCard from "../ContentCard.astro";
         top: 50px;
         opacity: 1;
     }
-    a {
-        @apply py-2;
-    }
 
 
 
@@ -101,5 +100,13 @@ import ContentCard from "../ContentCard.astro";
     :where(#il) {
         opacity: 0.5;
     }
+@media screen and (max-width: 1150px) {
+    .chevron {
+        display: none;
+    }
+    ul {
+        display: none;
+    }
+}
 
 </style>
