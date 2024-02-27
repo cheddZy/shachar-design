@@ -4,13 +4,12 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import MouseTest from "../../components/MouseTest.astro";
 
-import ShowcaseBackButton from "../../components/showcase/ShowcaseBackButton.astro";
-import ShowcaseTitle from "../../components/showcase/ShowcaseTitle.astro";
-import ShowcaseThumbnail from "../../components/showcase/ShowcaseThumbnail.astro";
-import ShowcaseDetails from "../../components/showcase/ShowcaseDetails.astro";
-import ShowcaseOverview from "../../components/showcase/ShowcaseOverview.astro";
-import ShowcaseGallery from "../../components/showcase/ShowcaseGallery.astro";
-
+import ShowcaseBackButton from "../../components/showcaseTFCO/ShowcaseBackButton.astro";
+import ShowcaseTitle from "../../components/showcaseTFCO/ShowcaseTitle.astro";
+import ShowcaseThumbnail from "../../components/showcaseTFCO/ShowcaseThumbnail.astro";
+import ShowcaseDetails from "../../components/showcaseTFCO/ShowcaseDetails.astro";
+import ShowcaseOverview from "../../components/showcaseTFCO/ShowcaseOverview.astro";
+import ShowcaseGallery from "../../components/showcaseTFCO/ShowcaseGallery.astro";
 
 import Shots_Temp from '../../images/209shots_so.png'
 ---
@@ -24,22 +23,19 @@ import Shots_Temp from '../../images/209shots_so.png'
         <ShowcaseTitle
 
                 src=""
-                title1="Team Fortress S2"
-                title2="Branding & HUD"
-                date="January 2024"
+                title1="TFConnect:"
+                title2="Charity Project"
+                date="December 2023"
                 tag1="UXUI"
-                tag2="Game Design"
-                tag3="Visual Design"
+                tag2="Proj. Management"
+                tag3="Product"
 
         />
         <ShowcaseThumbnail
         src={Shots_Temp}
         alt="Alt"/>
 
-        <ShowcaseDetails
-
-
-        />
+        <ShowcaseDetails />
 
         <ShowcaseOverview />
         <ShowcaseGallery />

@@ -1,0 +1,107 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+import GalleryImage from './GalleryImage.astro';
+
+import Donators from '../../images/gallery/tfco/donators.png';
+import FormIncentives from '../../images/gallery/tfco/DonorformIncentives.png';
+import FormSignup from '../../images/gallery/tfco/DonorformSignup.png';
+import Icons from '../../images/gallery/tfco/IconsTFC.png';
+import States from '../../images/gallery/tfco/States.png';
+import TalentShow from '../../images/gallery/tfco/TalentShow.png';
+
+
+
+---
+
+<div id="galleryWrapper">
+    <section>
+        <h3>Gallery</h3>
+        <div id="galleryGrid">
+
+            <GalleryImage id="g-01"
+                          src={Icons}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-02"
+                          src={Donators}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-03"
+                          src={FormSignup}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-04"
+                          src={FormIncentives}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-07"
+                          src={States}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-08"
+                          src={TalentShow}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+
+        </div>
+
+</section>
+</div>
+
+<style>
+    #galleryWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+
+    #galleryGrid {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        gap: 1rem;
+    }
+
+    section {
+        margin-top: 3rem;
+        margin-inline: 5%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h3 {
+        @apply px-6;
+        font-size: var(--h6) !important;
+        font-weight: 600;
+        max-width: 855px;
+        width: 100%;
+
+        margin-bottom: 1rem;
+
+    }
+
+    @media screen and (max-width: 1500px) {
+        #galleryGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+    }
+
+
+</style>

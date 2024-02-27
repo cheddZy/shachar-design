@@ -5,14 +5,14 @@ import '../../themes.scss';
 
 import { Image } from "astro:assets";
 
-import ShotIdle from '../../images/tfs2_Shot_gray.png';
+import TFCoLogo from '../../images/gallery/tfco/tfcologo.png';
 
 const {title1, title2, src, date, tag1, tag2, tag3} = Astro.props;
 ---
 
 <div id="titleWrapper">
     <div id="logoContainer">
-        <Image src={ShotIdle} alt="Alt text"/>
+        <Image src={TFCoLogo} alt="Alt text"/>
     </div>
     <div id="titleContainer">
         <h1>{title1}</h1>
