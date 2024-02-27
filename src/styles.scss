@@ -48,17 +48,6 @@ header:hover #languageSwitch {
   color: $text;
 }
 
-#languageSwitch {
-  @apply px-1;
-  @apply py-1;
-  @apply rounded-md;
-  @apply transition-colors;
-  @apply duration-200;
-
-  border: solid transparent 1px;
-  color: $text;
-}
-
 /*The Chevron Icon*/
 #c-213 {
   scale: 0.8;
@@ -72,21 +61,6 @@ header:hover #languageSwitch {
 
 #sunIcon {
   scale: 0.8;
-}
-
-#languageSwitch {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#languageSwitch:hover {
-  border: solid 1px $text;
-  background-color: $text;
-}
-
-#languageSwitch:hover :is(#c-213, #l-214) {
-  color: $bg;
 }
 
 #navContainer {

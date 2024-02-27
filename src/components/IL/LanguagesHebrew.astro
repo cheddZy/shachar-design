@@ -1,9 +1,9 @@
 ---
-import '../globals.scss';
-import '../styles.scss';
-import '../themes.scss';
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
 import { ChevronDown } from '@astropub/icons'
-import ContentCard from "./ContentCard.astro";
+import ContentCard from "../ContentCard.astro";
 ---
 
 
@@ -25,19 +25,21 @@ import ContentCard from "./ContentCard.astro";
     <ul id="langaugeSelection" class="group">
         <li>
             <button disabled id="en">
-               English
+                <a href="/" target="_self">English</a>
             </button>
         </li>
         <li>
-            <button id="il">
-                <a href="/./il/home/" target="_self">Hebrew</a>
+            <button disabled id="il">
+                עברית
             </button>
         </li>
     </ul>
 </div>
 
 <style>
-
+* {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+}
     ul {
         top: -60px;
 
@@ -96,7 +98,7 @@ import ContentCard from "./ContentCard.astro";
     :where(#en, #il) {
         font-size: 0.8rem;
     }
-    :where(#en) {
+    :where(#il) {
         opacity: 0.5;
     }
 

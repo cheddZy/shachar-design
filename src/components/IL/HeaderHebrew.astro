@@ -1,0 +1,36 @@
+---
+import ThemeSwitch from ".././ThemeSwitch.astro";
+import Languages from ".././IL/LanguagesHebrew.astro";
+
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+---
+
+<header>
+
+    <div class="" id="portfolioName"><h6 class="font-bold"><a href="/">שחר משה ואלך</a></h6>
+    </div>
+    <div class="" id="navContainer">
+        <Languages />
+        <ThemeSwitch class=""/>
+        <div class="emailContainer" id="emailHeader">
+            <a target="_blank" href="mailto:info@cheddzy.com">artcheddzy@gmail.com</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        background-color: var(--bg);
+        z-index: 1;
+        flex-direction: row-reverse;
+    }
+    #navContainer {
+        flex-direction: row-reverse;
+    }
+    #portfolioName {
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+
+</style>

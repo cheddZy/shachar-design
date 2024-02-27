@@ -1,0 +1,462 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+import { Image } from "astro:assets";
+---
+
+<script>
+    const winPrint = document.getElementById('windowSize');
+    let windowHeight = window.innerHeight,
+        windowWidth = window.innerWidth;
+
+    function updateWindowSize() {
+        winPrint.innerHTML = windowWidth + 'x' + windowHeight;
+    }
+
+    // Executes
+    setInterval(function () {
+
+            windowHeight = window.innerHeight;
+            windowWidth = window.innerWidth;
+            updateWindowSize();
+        },
+        10)
+
+    // TODO: Clock
+    const clockTime = document.getElementById('clockTime');
+
+    function currentTime() {
+        let date = new Date();
+
+        let hour = date.getHours(),
+            min = date.getMinutes(),
+            sec = date.getSeconds(),
+
+            midday = (hour >= 12) ? "PM" : "AM";
+        hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+        hour = fixTime(hour);
+        min = fixTime(min);
+        sec = fixTime(sec);
+
+        clockTime.innerText = hour + ":" + min + ":" + sec + " " + midday;
+    }
+
+    setInterval(function () {
+        currentTime()
+    }, 1000)
+
+    function fixTime(set) {
+        if (set < 10) {
+            return "0" + set;
+        } else {
+            return set;
+        }
+    }
+
+
+    currentTime();
+
+
+    const cursorPosX = document.getElementById('mouseX'),
+        cursorPosY = document.getElementById('mouseY');
+
+    let mouseX = 0,
+        mouseY = 0;
+
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorPosY.innerHTML = ' ' + mouseY + ' ';
+        cursorPosX.innerHTML = ' ' + mouseX + ' ';
+    })
+
+</script>
+
+
+<div id="heroContainer">
+    <section>
+        <svg class="asterisk" width="400px" height="400px" viewBox="0 0 2000 2000"
+             fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><rect id="Artboard1" x="0" y="0" width="2000" height="2000" fill="none"/>
+            <clipPath id="_clip1"><rect x="0" y="0" width="2000" height="2000"/></clipPath>
+            <g clip-path="url(#_clip1)">
+                <path d="M726.086,2000l547.828,0l0,-519.425l449.233,255.958l276.853,-475.351l-449.233,-261.182l449.233,-261.182l-276.853,-475.351l-449.233,261.182l0,-524.649l-547.828,-0l-0,524.649l-449.233,-261.182l-276.853,475.351l449.233,261.182l-449.233,261.182l276.853,475.351l449.233,-255.958l-0,519.425Z" fill-rule="nonzero"/></g></svg>
+        <div class="heroLeft">
+            <div class="hlTop">
+                <small>WELCOME</small>
+                <small>DESIGN PORTFOLIO</small>
+                <small>(1/1)</small>
+            </div>
+            <div id="heroTitle">
+                <h2>
+                    מעצב ממשק משתמש המתמקד באתרים רספונסיביים ומוצרים
+                    המרוכזים בחוויית משתמש
+                </h2>
+                <div id="workStatus">
+                    <div id="workLit"></div>
+                    <div id="getInTouch">פתוח לעבודה</div>
+                </div>
+            </div>
+        </div>
+        <div class="heroRight">
+            <div id="wrapAddon">
+                <small id="clockTime"></small>
+                <small id="windowSize"></small>
+                <small id="mouseDisplay">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.29227 0.048984C3.47033 -0.032338 3.67946 -0.00228214 3.8274 0.125891L12.8587 7.95026C13.0134 8.08432 13.0708 8.29916 13.0035 8.49251C12.9362 8.68586 12.7578 8.81866 12.5533 8.82768L9.21887 8.97474L11.1504 13.2187C11.2648 13.47 11.1538 13.7664 10.9026 13.8808L8.75024 14.8613C8.499 14.9758 8.20255 14.8649 8.08802 14.6137L6.15339 10.3703L3.86279 12.7855C3.72196 12.934 3.50487 12.9817 3.31479 12.9059C3.1247 12.8301 3 12.6461 3 12.4414V0.503792C3 0.308048 3.11422 0.130306 3.29227 0.048984ZM4 1.59852V11.1877L5.93799 9.14425C6.05238 9.02363 6.21924 8.96776 6.38319 8.99516C6.54715 9.02256 6.68677 9.12965 6.75573 9.2809L8.79056 13.7441L10.0332 13.178L8.00195 8.71497C7.93313 8.56376 7.94391 8.38824 8.03072 8.24659C8.11753 8.10494 8.26903 8.01566 8.435 8.00834L11.2549 7.88397L4 1.59852Z"
+                              fill="var(--text-50)" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <span id="mouseX">0</span> X <span id="mouseY">0</span> Y
+                </small>
+            </div>
+            <div id="iconGrid">
+                <a href="https://www.linkedin.com/in/shachar-mw/" target="_blank" class="font-medium socialLink"
+                   id="iconLinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title>Linkedin</title>
+                        <path d="M2 1C1.44772 1 1 1.44772 1 2V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V2C14 1.44772 13.5523 1 13 1H2ZM3.05 6H4.95V12H3.05V6ZM5.075 4.005C5.075 4.59871 4.59371 5.08 4 5.08C3.4063 5.08 2.925 4.59871 2.925 4.005C2.925 3.41129 3.4063 2.93 4 2.93C4.59371 2.93 5.075 3.41129 5.075 4.005ZM12 8.35713C12 6.55208 10.8334 5.85033 9.67449 5.85033C9.29502 5.83163 8.91721 5.91119 8.57874 6.08107C8.32172 6.21007 8.05265 6.50523 7.84516 7.01853H7.79179V6.00044H6V12.0047H7.90616V8.8112C7.8786 8.48413 7.98327 8.06142 8.19741 7.80987C8.41156 7.55832 8.71789 7.49825 8.95015 7.46774H9.02258C9.62874 7.46774 10.0786 7.84301 10.0786 8.78868V12.0047H11.9847L12 8.35713Z"
+                              fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <p>צור קשר</p>
+                </a>
+                <a href="https://dribbble.com/cheddzy" target="_blank" class="socialLink" id="iconDribbble">
+                    <svg fill="currentColor" fill-rule="evenodd" width="24" height="24" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <title>Dribbble</title>
+                        <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
+                    </svg>
+
+                </a>
+                <a href="https://github.com/cheddzy" target="_blank" class="socialLink" id="iconGithub">
+                    <svg width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title>Github</title>
+                        <path d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z"
+                              fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+
+                </a>
+                <a href="https://www.behance.net/cheddzy" target="_blank" class="socialLink" id="iconBehance">
+                    <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <title>Behance</title>
+                        <path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/>
+                    </svg>
+
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    * {
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+    .asterisk {
+        position: absolute;
+        z-index: -1;
+        fill: var(--accent);
+        opacity: 0.25;
+        right: 12rem;
+        animation: spin 72s infinite linear;
+    }
+    @keyframes spin {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+    .hlTop {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    #mouseDisplay {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        width: 8rem;
+        font-family: "Geist Mono Variable", monospace;
+    }
+    #heroTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #iconGrid {
+        display: grid;
+        justify-content: center;
+        gap: 5px 5px;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+                'Beh Dri Git Lin Lin Lin'
+
+
+    }
+
+    #iconLinkedIn {
+        grid-area: Lin;
+        background-color: var(--text-10);
+        border: solid 1px var(--text);
+        color: var(--text);
+    }
+
+    #iconGitHub {
+        grid-area: Git;
+    }
+
+    #iconBehance {
+        grid-area: Beh;
+    }
+
+    #iconDribbble {
+        grid-area: Dri;
+    }
+
+    .socialLink {
+        @apply px-4;
+        @apply py-3.5;
+        @apply rounded-xl;
+        @apply duration-200;
+
+        border: solid var(--text-50) 1px;
+        color: var(--text);
+
+        background: none;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .socialLink:hover {
+        background: firebrick;
+        background: var(--text) !important;
+        border: solid var(--text) 1px !important;
+        color: var(--bg) !important;
+    }
+
+    button {
+        margin-top: 3rem;
+    }
+
+    button a {
+        @apply px-4;
+        @apply py-2;
+
+        border-radius: 0.5rem;
+
+        font-weight: 600;
+
+        background-color: var(--text);
+        color: var(--bg);
+
+        font-size: var(--h5);
+
+    }
+
+    #heroContainer {
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    #wrapAddon {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    h2 {
+        font-weight: 500;
+        text-align: right;
+    }
+
+    #workLit {
+        background-color: #39cc68;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 1rem;
+    }
+
+    #contacts {
+        font-weight: 600;
+    }
+
+
+    #workStatus {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 0.5rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        background-color: var(--text);
+        color: var(--bg);
+        width: fit-content;
+        @apply rounded-lg;
+        @apply px-4;
+        @apply py-2;
+        @apply transition-colors;
+    }
+
+    section {
+        border-radius: 0 0 2rem 2rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 83vh;
+        background: linear-gradient(transparent, rgba(114, 104, 203, 0.5));
+        box-sizing: border-box;
+        overflow: clip;
+    }
+
+    .heroLeft {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    small {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+
+        border: 1px solid var(--text-10);
+        font-family: "Geist Mono Variable", monospace;
+    }
+
+    .heroRight {
+        width: 50%;
+        display: flex;
+        overflow: clip;
+
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        height: 100%;
+
+    }
+
+    div img {
+        border-radius: 0.25rem;
+    }
+
+    #heroContainer {
+        border-bottom: dotted 1px var(--secondary);
+    }
+
+    @media screen and (max-width: 1850px) {
+        #iconGrid {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                'Lin Lin Lin' 'Beh Dri Git'
+        }
+        h2 {
+            font-size: var(--h3) !important;
+        }
+    }
+
+    @media screen and (max-width: 1155px) {
+        h2 {
+            font-size: var(--h4) !important;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        #iconGrid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                'Lin' 'Beh''Dri' 'Git';
+        }
+
+        .heroLeft {
+            width: 75%;
+        }
+
+        #mouseDisplay {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h2 {
+            font-size: var(--h5) !important;
+        }
+
+        .headerContent {
+            display: none;
+        }
+
+        :where(#iconGitHub, #iconDribbble, #iconLinkedIn, #iconBehance) {
+            opacity: 1;
+        }
+
+        section {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 1rem 1rem;
+            height: 43rem;
+        }
+
+        .heroRight {
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .heroLeft {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #heroContainer {
+            padding-top: 1rem;
+        }
+
+        #wrapAddon {
+            justify-content: center;
+            align-items: center;
+        }
+
+        #iconGrid {
+            margin-bottom: 2rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                'Beh Dri Git' 'Lin Lin Lin'
+        }
+
+        .hlTop {
+            display: none;
+        }
+        .asterisk {
+            display: none;
+        }
+    }
+
+
+</style>
