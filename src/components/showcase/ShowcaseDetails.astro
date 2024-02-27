@@ -8,20 +8,20 @@ import '../../themes.scss';
     <div id="detailGrid">
         <div id="detailClient">
             <h3 class="detailName">Client</h3>
-            <p class="detailHeading">Amper Software</p>
+            <a class="detailHeading" href="https://twitter.com/AmperSoftware" target="_blank">Amper Software</a>
         </div>
 
         <div id="detailRole">
             <h3 class="detailName">Role</h3>
             <p class="detailHeading">UI Designer,</p>
-            <p class="detailHeading">Team Lead</p>
+            <p class="detailHeading">Brand Designer</p>
         </div>
 
         <div id="detailResponsible">
             <h3 class="detailName">Responsibilities</h3>
-            <p class="detailHeading">First one,</p>
-            <p class="detailHeading">Second one,</p>
-            <p class="detailHeading">Third one</p>
+            <p class="detailHeading">Prototyping,</p>
+            <p class="detailHeading">UXUI Direction</p>
+            <p class="detailHeading">Visual Design</p>
         </div>
         <div id="detailTimeline">
             <h3 class="detailName">Timeline</h3>
@@ -29,8 +29,8 @@ import '../../themes.scss';
         </div>
 
         <div id="detailButton">
-            <a href="#">
-                Check it out
+            <a href="https://twitter.com/TeamFortressS2" target="_blank">
+                Check it out ->
             </a>
         </div>
     </div>
@@ -84,10 +84,17 @@ import '../../themes.scss';
         @apply py-4;
         text-align: center;
         @apply rounded-xl;
-        @apply transition-opacity;
+        @apply transition-all;
+        font-weight: 600;
+        font-size: 1.2rem;
 
         letter-spacing: 1px;
         border: 1px solid var(--text-50);
+    }
+    #detailButton a:hover {
+        border: 1px solid var(--text);
+        background-color: var(--text);
+        color: var(--bg);
     }
     .detailName {
         font-size: 0.9rem !important;
@@ -140,6 +147,25 @@ import '../../themes.scss';
             font-size: 0.9rem !important;
         }
 
+    }
+
+    #detailClient .detailHeading:hover::after {
+        content: '-->';
+        opacity: 1;
+        transform: translateX(25%);
+    }
+
+    #detailClient .detailHeading:hover {
+        color: var(--accent);
+
+    }
+
+    #detailClient .detailHeading::after {
+        content: '-->';
+        opacity: 0;
+        position: absolute;
+        transform: translateX(-100%);
+        @apply transition-all;
     }
 
 

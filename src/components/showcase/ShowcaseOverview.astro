@@ -2,32 +2,31 @@
 import '../../globals.scss';
 import '../../styles.scss';
 import '../../themes.scss';
-
-
 ---
 
 <div>
     <section>
         <h3>Overview</h3>
         <div>
-        <p> Our Project Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
-            incidunt
-            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
-            recusandae rem
-            saepe tempore, temporibus, veritatis!
-        </p>
-        <p>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
-            incidunt
-            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
-            recusandae rem
-            saepe tempore, temporibus, veritatis!
-        </p>
-        <p>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
-            incidunt
-            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
-            recusandae rem
-            saepe tempore, temporibus, veritatis!
-        </p>
+            <p>
+                Back in <span>April 2021</span>, when <a href="https://sbox.game" target="_blank">s&box</a> started to
+                give early access to the Source 2 tools and ways to create
+                custom games, <a href="https://twitter.com/AmperSoftware" target="_blank">Amper Software</a> decided to
+                gather a team of <span>experienced game developers</span>
+                to attempt a feature-complete port of Team Fortress 2.
+            </p>
+            <p>
+                <span>Together with a dedicated UI team,</span> our responsibility was to reimagine the original game's interface
+                using modern methods. We conducted <span>various public play-tests, gathered user feedback and created concepts</span>
+                to make sure our designs were suitable for players, and made with respect to the original designs. The project grew
+                onto mass success, with a huge <a href="https://www.eurogamer.net/team-fortress-2-is-being-ported-to-source-2-by-the-modding-community" target="_blank">amount of</a>
+                <a href="https://kotaku.com/team-fortress-2-fans-are-rebuilding-the-game-with-lates-1847475438" target="_blank">articles</a>
+                <a href="https://www.pcgamer.com/if-valve-wont-remake-team-fortress-2-these-modders-will/" target="_blank">being</a>
+                <a href="https://www.thegamer.com/team-fortress-2-source-2-port/" target="_blank">made</a> on the project within its lifetime by major publications.
+            </p>
+            <p>
+                As of <span>January 10th, 2024</span> the project finished development, and is currently publicly unavailable.
+            </p>
         </div>
     </section>
 </div>
@@ -38,6 +37,7 @@ import '../../themes.scss';
         flex-direction: column;
         align-items: center;
     }
+
     section {
         margin-top: 3rem;
         margin-inline: 5%;
@@ -53,7 +53,7 @@ import '../../themes.scss';
 
     p {
         font-size: 1.1rem !important;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1.8rem;
         color: var(--text-50);
         margin-bottom: 2rem;
@@ -61,8 +61,12 @@ import '../../themes.scss';
 
     p span {
         color: var(--text);
-        font-style: italic;
     }
+
+    p a {
+        color: var(--accent);
+    }
+
     div {
         width: 100%;
     }
