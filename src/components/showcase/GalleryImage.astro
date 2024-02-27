@@ -16,49 +16,28 @@ const {id, src, alt, ariaDesc, context} = Astro.props;
                    loading="lazy"
             />
 
-            <div class="galleryContext">
-                <small class="">{context}</small>
-            </div>
+        </div>
+        <div class="galleryContext">
+            <small class="">{context}</small>
         </div>
     </div>
 
 <style>
     .galleryImage {
         flex-direction: column;
-        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .galleryContext {
+
+    }
+
+    .galleryContainer {
         overflow: clip;
         border: solid 1px var(--snoopingAroundAreWe);
         @apply rounded-md;
     }
 
-    .galleryContext {
-        width: 100%;
-        height: 32px;
-        position: absolute;
-        bottom: 8px;
-        padding: 1rem;
-        white-space: nowrap;
-        z-index: 1;
-        color: #f1f1f1;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .galleryContainer {
-        overflow: clip;
-    }
-
-    .galleryContainer::after {
-        content: "";
-        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
-        position: absolute;
-        width: 100%;
-        height: 100px;
-        bottom: -12px;
-    }
 
     img {
         image-rendering: optimizeQuality;
