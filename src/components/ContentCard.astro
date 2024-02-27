@@ -4,11 +4,11 @@ import '../styles.scss';
 import '../themes.scss';
 import { Image } from 'astro:assets';
 
-const {href, src, alt, ariaDesc, underLabel, date} = Astro.props;
+const {href, src, alt, ariaDesc, underLabel, date, target} = Astro.props;
 ---
 
 
-<a href={href} target="_blank" class="contentCard group">
+<a href={href} target={target} class="contentCard group">
     <div class="cardImage">
         <div>
             <Image src={src}
