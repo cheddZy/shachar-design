@@ -1,0 +1,70 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+
+
+---
+
+<div>
+    <section>
+        <h3>Overview</h3>
+        <div>
+        <p> Our Project Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
+            incidunt
+            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
+            recusandae rem
+            saepe tempore, temporibus, veritatis!
+        </p>
+        <p>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
+            incidunt
+            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
+            recusandae rem
+            saepe tempore, temporibus, veritatis!
+        </p>
+        <p>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore ducimus eveniet
+            incidunt
+            libero repellat saepe? Aspernatur <span>doloribus ex expedita</span> labore necessitatibus odit quibusdam
+            recusandae rem
+            saepe tempore, temporibus, veritatis!
+        </p>
+        </div>
+    </section>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        margin-top: 3rem;
+        margin-inline: 5%;
+        @apply px-6;
+        max-width: 855px;
+    }
+
+    h3 {
+        font-size: var(--h6) !important;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+    }
+
+    p {
+        font-size: 1.1rem !important;
+        font-weight: 400;
+        line-height: 1.8rem;
+        color: var(--text-50);
+        margin-bottom: 2rem;
+    }
+
+    p span {
+        color: var(--text);
+        font-style: italic;
+    }
+    div {
+        width: 100%;
+    }
+
+</style>

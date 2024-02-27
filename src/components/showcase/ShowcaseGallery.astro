@@ -1,0 +1,121 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+import GalleryImage from './GalleryImage.astro';
+
+
+import HUD1 from '../../images/gallery/tfs2/HUD1.png'
+import Icons from '../../images/gallery/tfs2/Icons.png'
+import HUDWheel from '../../images/gallery/tfs2/HUDWheel.png'
+import LOAD1 from '../../images/gallery/tfs2/LOAD1.png'
+import LOAD2 from '../../images/gallery/tfs2/load2.png'
+import MENU1 from '../../images/gallery/tfs2/MENU1.png'
+import MENU2 from '../../images/gallery/tfs2/MENU2.png'
+import MENU3 from '../../images/gallery/tfs2/MENU3.png'
+
+
+---
+
+<div id="galleryWrapper">
+    <section>
+        <h3>Gallery</h3>
+        <div id="galleryGrid">
+
+            <GalleryImage id="g-01"
+                          src={Icons}
+                          alt='alt text'
+                          context="Icon Set in use in-game and on the website"
+            />
+            <GalleryImage id="g-02"
+                          src={HUD1}
+                          alt='alt text'
+                          context="Heads up Display concept"
+            />
+            <GalleryImage id="g-03"
+                          src={HUDWheel}
+                          alt='alt text'
+                          context="'Taunt' wheel concept"
+            />
+            <GalleryImage id="g-04"
+                          src={LOAD1}
+                          alt='alt text'
+                          context="Loadout screen 1"
+            />
+            <GalleryImage id="g-05"
+                          src={LOAD2}
+                          alt='alt text'
+                          context="Loadout screen 2"
+            />
+            <GalleryImage id="g-06"
+                          src={MENU1}
+                          alt='alt text'
+                          context="Main Menu Initial concept (Unused)"
+            />
+            <GalleryImage id="g-07"
+                          src={MENU2}
+                          alt='alt text'
+                          context="Additional Main Menu concept (Unused)"
+            />
+            <GalleryImage id="g-08"
+                          src={MENU3}
+                          alt='alt text'
+                          context="Main Menu we implemented that was intended as placeholder"
+            />
+
+        </div>
+
+</section>
+</div>
+
+<style>
+    #galleryWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #galleryImage {
+        display: block;
+    }
+
+    #galleryGrid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+        gap: 0.25rem;
+    }
+
+    section {
+        margin-top: 3rem;
+        margin-inline: 5%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h3 {
+        @apply px-6;
+        font-size: var(--h6) !important;
+        font-weight: 600;
+        max-width: 855px;
+        width: 100%;
+
+        margin-bottom: 1rem;
+
+    }
+
+    @media screen and (max-width: 1500px) {
+        #galleryGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+    }
+
+
+</style>

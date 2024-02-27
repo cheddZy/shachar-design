@@ -1,0 +1,57 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+---
+
+
+<div>
+    <button>
+        <a href="/" target="_self">
+           <p><- Back to projects</p>
+        </a>
+    </button>
+</div>
+
+
+<style>
+    div {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        padding: 2rem 2%;
+        top: 3rem;
+        position: fixed;
+    }
+
+    button p {
+        opacity: 1;
+        background-color: var(--text-10);
+    }
+
+    button:hover p {
+        opacity: 0.65
+    }
+
+    a {
+        @apply px-6;
+        @apply py-2;
+        color: var(--text);
+    }
+    p {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+        @apply transition-opacity;
+
+        border: 1px solid var(--text-10);
+    }
+
+    @media screen and (max-width: 768px) {
+        div {
+            display: none;
+        }
+    }
+
+</style>

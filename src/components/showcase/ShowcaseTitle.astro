@@ -1,0 +1,165 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+
+import { Image } from "astro:assets";
+
+import ShotIdle from '../../images/tfs2_Shot_gray.png';
+
+const {title1, title2, src, date, tag1, tag2, tag3} = Astro.props;
+---
+<div id="titleWrapper">
+    <div id="logoContainer">
+        <Image src={ShotIdle} alt="Alt text"/>
+    </div>
+    <div id="titleContainer">
+        <h1>{title1}</h1>
+        <h1>{title2}</h1>
+        <div id="showcaseContext">
+
+            <small class="showcaseTag" id="showcaseDate">{date}</small>
+                <small id="seperator">|</small>
+            <small class="showcaseTag tagWide">{tag1}</small>
+            <small class="showcaseTag tagWide">{tag2}</small>
+            <small class="showcaseTag tagWide">{tag3}</small>
+            <div class="showcaseTagsWrap">
+                <small class="showcaseTag">{tag1}</small>
+                <small class="showcaseTag">{tag2}</small>
+                <small class="showcaseTag">{tag3}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+
+    #titleWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 12%;
+        margin-bottom: 6rem;
+    }
+    .showcaseTagsWrap {
+        display: none;
+    }
+
+    #logoContainer {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 14rem;
+    }
+
+    #logoContainer img {
+        height: 3rem;
+        width: auto;
+    }
+
+    #titleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-weight: 700;
+        line-height: 6.8rem;
+        color: var(--text);
+    }
+
+    #showcaseContext {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    #seperator {
+        @apply px-1;
+        color: var(--text-25);
+    }
+
+    #showcaseDate {
+        color: var(--text-50);
+        border: none;
+        @apply px-0;
+    }
+
+    .showcaseTag {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+        @apply transition-opacity;
+
+        font-family: "Geist Mono Variable", monospace;
+        letter-spacing: 1px;
+        border: 1px solid var(--text-10);
+    }
+
+    @media screen and (max-width: 1850px) {
+        h1 {
+            line-height: normal;
+            font-size: 4rem !important;
+        }
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        h1 {
+            line-height: normal;
+            font-size: 3rem !important;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            line-height: normal;
+            font-size: 2rem !important;
+        }
+        .showcaseTagsWrap {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        #seperator {
+            display: none;
+        }
+        #showcaseDate {
+            border: none;
+        }
+        .showcaseTag {
+            width: fit-content;
+        }
+        .tagWide {
+            display: none;
+        }
+        #showcaseContext {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #logoContainer {
+            height: 12rem;
+        }
+        #titleWrapper {
+            margin-bottom: 2rem;
+        }
+        #titleContainer {
+            flex-direction: column;
+        }
+    }
+
+</style>

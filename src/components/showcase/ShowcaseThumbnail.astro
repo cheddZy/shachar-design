@@ -1,0 +1,40 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+
+import { Image } from "astro:assets";
+
+import Shots_Temp from '../../images/209shots_so.png'
+
+const {src, alt} = Astro.props;
+---
+
+
+<div id="imageWrapper">
+    <Image src={Shots_Temp} alt="" />
+</div>
+
+
+<style>
+
+    #imageWrapper {
+        margin-inline: 18%;
+        border-radius: 1rem;
+        overflow: clip;
+        margin-bottom: 6rem;
+    }
+    @media screen and (max-width: 1150px) {
+        #imageWrapper {
+            margin-inline: 12%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        #imageWrapper {
+            border-radius: 0.5rem;
+            margin-inline: 6%;
+            margin-bottom: 2rem;
+        }
+    }
+
+</style>

@@ -1,0 +1,146 @@
+---
+import '../../globals.scss';
+import '../../styles.scss';
+import '../../themes.scss';
+---
+
+<div id="detailWrapper">
+    <div id="detailGrid">
+        <div id="detailClient">
+            <h3 class="detailName">Client</h3>
+            <p class="detailHeading">Amper Software</p>
+        </div>
+
+        <div id="detailRole">
+            <h3 class="detailName">Role</h3>
+            <p class="detailHeading">UI Designer,</p>
+            <p class="detailHeading">Team Lead</p>
+        </div>
+
+        <div id="detailResponsible">
+            <h3 class="detailName">Responsibilities</h3>
+            <p class="detailHeading">First one,</p>
+            <p class="detailHeading">Second one,</p>
+            <p class="detailHeading">Third one</p>
+        </div>
+        <div id="detailTimeline">
+            <h3 class="detailName">Timeline</h3>
+            <p class="detailHeading">N/A</p>
+        </div>
+
+        <div id="detailButton">
+            <a href="#">
+                Check it out
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    #detailWrapper {
+        width: 100%;
+    }
+
+    #detailGrid {
+        margin-inline: 18%;
+        display: grid;
+        gap: 0;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 'Client Role Responsibility Timeline detailButton detailButton';
+    }
+
+    #detailClient {
+        grid-area: Client;
+    }
+    #detailClient .detailHeading {
+        text-decoration: var(--text-25) underline;
+    }
+
+    #detailRole {
+        grid-area: Role;
+    }
+
+    #detailResponsible {
+        grid-area: Responsibility;
+    }
+    #detailTimeline {
+        grid-area: Timeline;
+    }
+
+    #detailButton {
+        grid-area: detailButton;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    #detailButton a {
+        margin: 1rem;
+        width: 100%;
+        @apply px-12;
+        @apply py-4;
+        text-align: center;
+        @apply rounded-xl;
+        @apply transition-opacity;
+
+        letter-spacing: 1px;
+        border: 1px solid var(--text-50);
+    }
+    .detailName {
+        font-size: 0.9rem !important;
+        color: var(--text-50);
+        font-weight: 500;
+        height: fit-content;
+    }
+    @media screen and (max-width: 1250px) {
+
+        #detailWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        #detailGrid {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                    '. detailButton detailButton .'
+                    'Client Responsibility Role Timeline'
+                    'Client Responsibility Role Timeline';
+            gap: 0 4rem;
+            width: 100%;
+            margin-inline: 6%;
+            align-items: center;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        #detailWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #detailGrid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                    'detailButton detailButton'
+                    'Client Role'
+                    'Responsibility Timeline';
+            gap: 0 4rem;
+            margin-inline: 6%;
+        }
+
+        .detailHeading, .detailName {
+            font-size: 0.9rem !important;
+        }
+
+    }
+
+
+</style>

@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import MouseTest from "../../components/MouseTest.astro";
+
+import ShowcaseBackButton from "../../components/showcase/ShowcaseBackButton.astro";
+import ShowcaseTitle from "../../components/showcase/ShowcaseTitle.astro";
+import ShowcaseThumbnail from "../../components/showcase/ShowcaseThumbnail.astro";
+import ShowcaseDetails from "../../components/showcase/ShowcaseDetails.astro";
+import ShowcaseOverview from "../../components/showcase/ShowcaseOverview.astro";
+import ShowcaseGallery from "../../components/showcase/ShowcaseGallery.astro";
+---
+
+<Layout title="Shachar - Design Portfolio">
+    <MouseTest />
+
+    <Header />
+    <div id="showcaseWrapper">
+        <ShowcaseBackButton />
+        <ShowcaseTitle
+
+                src=""
+                title1="Team Fortress S2"
+                title2="Heads up Display"
+                date="November 2023"
+                tag1="UXUI"
+                tag2="Game Design"
+                tag3="Project"
+
+        />
+        <ShowcaseThumbnail />
+
+        <ShowcaseDetails />
+
+        <ShowcaseOverview />
+        <ShowcaseGallery />
+
+    </div>
+    <Footer />
+</Layout>
+
+<style>
+    #showcaseWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
