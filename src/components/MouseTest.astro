@@ -3,48 +3,53 @@
 ---
 
 
+<script>
+    const button = document.querySelector('button');
+    const link = document.querySelector('a');
+    const cursor = document.getElementById('cMouse');
+    let posX = 0,
+        posY = 0,
+        mouseX = 0,
+        mouseY = 0;
 
- <script>
-     const cursor = document.getElementById('cMouse');
-     let posX = 0,
-         posY = 0,
-         mouseX = 0,
-         mouseY = 0;
+    setInterval(function () {
 
-     setInterval(function () {
+        posX += (mouseX - posX) / 9;
+        posY += (mouseY - posY) / 9;
 
-         posX += (mouseX - posX) / 9;
-         posY += (mouseY - posY) / 9;
+        cursor.style.left = (posX - 6) + 'px';
+        cursor.style.top = (posY - 6) + 'px';
+    }, 10);
 
-         cursor.style.left = (posX - 6) + 'px';
-         cursor.style.top = (posY - 6) + 'px';
-     }, 10);
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
-     window.addEventListener('mousemove', e => {
-         mouseX = e.clientX;
-         mouseY = e.clientY;
+        // console.log(mouseX, mouseY);
+    })
 
-         // console.log(mouseX, mouseY);
-     })
 
-     window.addEventListener('mouseover', () => {
-         cursor.style.opacity = '1'
+    window.addEventListener('mouseover', () => {
+        cursor.style.opacity = '1'
+    });
 
-     });
+    link && button.addEventListener('mouseenter', () => {
+        cursor.style.animation = 'enlarge 200ms 1 forwards';
+    })
+    link && button.addEventListener('mouseleave', () => {
+        cursor.style.animationFillMode = 'backward';
+    })
 
- </script>
+</script>
 
-<!--<div id="circle"></div>-->
+
+<!--<div id="circle">*</div>-->
 <div id="cMouse"></div>
 
 <style>
     #circle {
         position: fixed;
         background: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        border: var(--secondary) solid 1px;
         z-index: 1;
         transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
         0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
@@ -69,6 +74,25 @@
         transform: translate(4px, 4px);
         opacity: 0;
     }
+
+    @keyframes default {
+     from {
+      transform: scale(6);
+     }
+     to {
+      transform: scale(1);
+     }
+    }
+
+    @keyframes enlarge {
+    from {
+         transform: scale(1);
+        }
+    to {
+         transform: scale(6);
+        }
+    }
+
 
     button:hover :is(#circle, #cMouse) {
         transform: scale(1.5);
