@@ -72,6 +72,16 @@ import { Image } from "astro:assets";
         cursorPosX.innerHTML = ' ' + mouseX + ' ';
     })
 
+    const mouseToggler = document.getElementById('mouseToggle');
+    const mouseDisplayer = document.getElementById('mouseDisplay');
+
+    mouseDisplayer && mouseToggler.addEventListener('mouseenter', () => {
+        mouseToggler.style.opacity = '1';
+    })
+    mouseDisplayer && mouseToggler.addEventListener('mouseleave', () => {
+        mouseToggler.style.opacity = '0';
+    })
+
 </script>
 
 
@@ -110,6 +120,7 @@ import { Image } from "astro:assets";
                     </svg>
                     <span id="mouseX">0</span> X <span id="mouseY">0</span> Y
                 </small>
+                <small id="mouseToggle">toggle button?</small>
             </div>
             <div id="iconGrid">
                 <a href="https://www.linkedin.com/in/shachar-mw/" target="_blank" class="font-medium socialLink"
@@ -151,6 +162,14 @@ import { Image } from "astro:assets";
 </div>
 
 <style>
+    #mouseToggle {
+        opacity: 0;
+        margin: 0;
+        border: solid 1px firebrick;
+        position: relative;
+        top: -0.8rem;
+        @apply transition-opacity;
+    }
     .asterisk {
         position: absolute;
         z-index: -1;
@@ -265,6 +284,7 @@ import { Image } from "astro:assets";
         flex-direction: column;
         align-items: flex-end;
         gap: 1rem;
+        z-index: 1;
     }
 
     h2 {
